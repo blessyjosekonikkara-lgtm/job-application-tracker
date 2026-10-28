@@ -1,0 +1,269 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Poppins', sans-serif;
+  color: #28234b;
+  background: #f4f2ff;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, #e5dcff 0, transparent 30%),
+    radial-gradient(circle at 90% 75%, #d8f4ff 0, transparent 30%),
+    #f7f6ff;
+}
+
+.app {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+/* Colourful header */
+.header {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 42px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(120deg, #6c3de8, #4768ef 65%, #38bde8);
+  box-shadow: 0 15px 35px #6953d52b;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -45px;
+  top: -100px;
+  border: 35px solid #ffffff20;
+  border-radius: 50%;
+}
+
+.header h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 8px;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #f0edff;
+  font-size: 15px;
+}
+
+/* Form panel */
+.panel {
+  padding: 30px;
+  margin-bottom: 35px;
+  border: 1px solid #e8e2ff;
+  border-radius: 22px;
+  background: #ffffffed;
+  box-shadow: 0 10px 30px #43318b0d;
+}
+
+.panel h2,
+.applications h2 {
+  margin: 0 0 24px;
+  font-size: 23px;
+  font-weight: 700;
+  color: #39266e;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 22px;
+}
+
+label {
+  align-self: end;
+  color: #5d547d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1.5px solid #e4dff5;
+  border-radius: 11px;
+  outline: none;
+  background: #fbfaff;
+  color: #30274e;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #7955ed;
+  background: white;
+  box-shadow: 0 0 0 4px #7955ed18;
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+button {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #7044e8, #5267ed);
+  color: white;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 16px #6849df35;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px #6849df45;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.error {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff0f1;
+  color: #c62848;
+  font-size: 13px;
+}
+
+/* Application cards */
+.applications h2 {
+  margin-bottom: 20px;
+}
+
+.applications {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.empty,
+.applications > p {
+  padding: 22px;
+  border: 1px dashed #cfc4f3;
+  border-radius: 15px;
+  background: #ffffffb8;
+  color: #77708f;
+  text-align: center;
+  font-size: 14px;
+}
+
+.job-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 25px;
+  border: 1px solid #e9e5f8;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 7px 22px #47319a0b;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(#8b5cf6, #42b8e9);
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #47319a16;
+}
+
+.job-card h3 {
+  margin: 0 0 8px;
+  color: #39266e;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.job-card p {
+  margin: 6px 0;
+  color: #716b87;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  background: #eee8ff;
+  color: #693ad2;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Different colours for application status */
+.status:where(*) {
+  border: 1px solid #e5dbff;
+}
+
+/* Responsive layout for phones */
+@media (max-width: 650px) {
+  .app {
+    width: 94%;
+    padding-top: 18px;
+  }
+
+  .header {
+    padding: 28px 23px;
+    border-radius: 19px;
+  }
+
+  .panel {
+    padding: 22px 17px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .panel h2,
+  .applications h2 {
+    font-size: 20px;
+  }
+
+  .job-card {
+    padding: 19px;
+  }
+}
